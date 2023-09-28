@@ -11,11 +11,14 @@
             "id": "67afbd4ae19e7aaf",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "2. Технический проект/Контекст.md",
-                "mode": "source",
-                "source": false
+                "file": "Untitled 2.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": 0,
+                  "zoom": 0
+                }
               }
             }
           }
@@ -77,7 +80,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2. Технический проект/Контекст.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +96,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2. Технический проект/Контекст.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2. Технический проект/Контекст.md"
+                "file": "Untitled.md"
               }
             }
           },
@@ -166,8 +167,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "67afbd4ae19e7aaf",
+  "active": "1afd68c37d6874e9",
   "lastOpenFiles": [
+    "Untitled 2.canvas",
+    "Untitled.md",
+    "2. Технический проект/Контекст.md",
     "neural_network_doc",
     "2. Технический проект/Контейнеры.md",
     "2. Технический проект/Компоненты.md",
@@ -175,7 +179,6 @@
     "1. Исходные сведения/Словарь.md",
     "1. Исходные сведения/Введение.md",
     "1. Исходные сведения/Архитектурные факторы.md",
-    "Untitled 2.canvas",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "README.md",
@@ -187,8 +190,6 @@
     "3. Технические процессы/Соглашение о кодировании.md",
     "3. Технические процессы/Документирование.md",
     "3. Технические процессы/Ведение репозитория кода.md",
-    "2. Технический проект/Контекст.md",
-    "Untitled.md",
     "ADR/2023-09.1 - Выбор архитектурной формы системы.md",
     "ADR/2023-09.7 - Выбор технологического процесса разработки.md",
     "ADR/2023-09.6 - Выбор инструментов автоматического тестирования.md",
@@ -205,7 +206,6 @@
     "3. Технические процессы",
     "ADR",
     "LICENSE",
-    "out/2. Технический проект/sample-container",
-    "out/2. Технический проект/sample-component"
+    "out/2. Технический проект/sample-container"
   ]
 }
