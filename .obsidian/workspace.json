@@ -26,10 +26,11 @@
             "id": "fca089a95ccc7e32",
             "type": "leaf",
             "state": {
-              "type": "diff-view",
+              "type": "markdown",
               "state": {
-                "file": ".obsidian/workspace.json",
-                "staged": false
+                "file": "1. Исходные сведения/Словарь.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -92,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "1. Исходные сведения/Словарь.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,6 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "1. Исходные сведения/Словарь.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -164,7 +167,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "1. Исходные сведения/Словарь.md"
+              }
             }
           },
           {
@@ -194,12 +199,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9e53090386169d7f",
+  "active": "fca089a95ccc7e32",
   "lastOpenFiles": [
+    "1. Исходные сведения/Архитектурные факторы.md",
     "LICENSE",
     "1. Исходные сведения/Введение.md",
     "1. Исходные сведения/Словарь.md",
-    "1. Исходные сведения/Архитектурные факторы.md",
     "Untitled.md",
     "3. Технические процессы/CI CD.md",
     "ADR/2023-09.1 - Выбор архитектурной формы системы.md",
