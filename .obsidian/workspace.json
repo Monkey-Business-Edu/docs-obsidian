@@ -11,15 +11,31 @@
             "id": "67afbd4ae19e7aaf",
             "type": "leaf",
             "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Untitled.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": 0,
+                  "zoom": 0
+                }
+              }
+            }
+          },
+          {
+            "id": "fca089a95ccc7e32",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "1. Исходные сведения/Словарь.md",
+                "file": "1. Исходные сведения/Введение.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -77,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. Исходные сведения/Словарь.md",
+                "file": "1. Исходные сведения/Введение.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. Исходные сведения/Словарь.md",
+                "file": "1. Исходные сведения/Введение.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. Исходные сведения/Словарь.md"
+                "file": "1. Исходные сведения/Введение.md"
               }
             }
           },
@@ -175,12 +191,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "67afbd4ae19e7aaf",
+  "active": "fca089a95ccc7e32",
   "lastOpenFiles": [
     "1. Исходные сведения/Словарь.md",
     "1. Исходные сведения/Введение.md",
     "1. Исходные сведения/Архитектурные факторы.md",
+    "Untitled.md",
+    "3. Технические процессы/CI CD.md",
     "ADR/2023-09.1 - Выбор архитектурной формы системы.md",
+    "Untitled.canvas",
+    "Untitled 1.canvas",
+    "Untitled 2.canvas",
+    "README.md",
+    "out/2. Технический проект/sample-component/Recipe Service. Диаграмма компонентов.png",
+    "out/2. Технический проект/sample-container/Recipe Web App. Диаграмма контейнеров.png",
+    "2. Технический проект/Код.md",
     "ADR/2023-09.2 - Выбор технологии программирования серверной части.md",
     "ADR/2023-09.3 - Выбор технологии программирования клиентского приложения.md",
     "ADR/2023-09.4 - Выбор системы хранения данных.md",
@@ -193,18 +218,9 @@
     "2. Технический проект/Контекст.md",
     "2. Технический проект/Контейнеры.md",
     "2. Технический проект/Компоненты.md",
-    "2. Технический проект/Код.md",
-    "Untitled 2.canvas",
     "Риски.md",
-    "Untitled.md",
     "3. Технические процессы/Риски.md",
     "neural_network_doc",
-    "Untitled 1.canvas",
-    "Untitled.canvas",
-    "README.md",
-    "out/2. Технический проект/sample-component/Recipe Service. Диаграмма компонентов.png",
-    "out/2. Технический проект/sample-container/Recipe Web App. Диаграмма контейнеров.png",
-    "3. Технические процессы/CI CD.md",
     "Словарь][маршрутизатором.md",
     "[.md",
     "0. Встречи с заказчиком",
