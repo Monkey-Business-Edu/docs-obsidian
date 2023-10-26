@@ -1,3 +1,6 @@
 [
-  "obsidian-git"
+  "obsidian-git",
+  "cm-editor-syntax-highlight-obsidian",
+  "obsidian-react-components",
+  "obsidian-diagrams-net"
 ]
