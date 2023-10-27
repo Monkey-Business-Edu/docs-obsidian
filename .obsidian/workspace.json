@@ -11,31 +11,15 @@
             "id": "67afbd4ae19e7aaf",
             "type": "leaf",
             "state": {
-              "type": "canvas",
-              "state": {
-                "file": "Untitled.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
-              }
-            }
-          },
-          {
-            "id": "fca089a95ccc7e32",
-            "type": "leaf",
-            "state": {
               "type": "markdown",
               "state": {
-                "file": "1. Исходные сведения/Словарь.md",
+                "file": "2. Технический проект/Module Course Creator/Backend/Модель данных.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. Исходные сведения/Словарь.md",
+                "file": "2. Технический проект/Module Course Creator/Backend/Модель данных.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. Исходные сведения/Словарь.md",
+                "file": "2. Технический проект/Module Course Creator/Backend/Модель данных.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,6 +138,14 @@
               "type": "git-history-view",
               "state": {}
             }
+          },
+          {
+            "id": "1440de4ebc9c8ea3",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
           }
         ],
         "currentTab": 1
@@ -168,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. Исходные сведения/Словарь.md"
+                "file": "2. Технический проект/Module Course Creator/Backend/Модель данных.md"
               }
             }
           },
@@ -196,27 +188,35 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "fca089a95ccc7e32",
+  "active": "67afbd4ae19e7aaf",
   "lastOpenFiles": [
-    "1. Исходные сведения/Архитектурные факторы.md",
+    "2. Технический проект/Module Course Creator/Backend/GraphQL API.md",
+    "2. Технический проект/Module Course Creator/Backend/Архитектура.md",
+    "2. Технический проект/Module Course Creator/Backend/Модель данных.md",
+    "2. Технический проект/Module Course Creator/Module Course Creator.md",
+    "2. Технический проект/Контекст.md",
+    "2. Технический проект/Компоненты.md",
+    "2. Технический проект/Контейнеры.md",
+    "2. Технический проект/Module Course Creator/Backend",
+    "2. Технический проект/Код.md",
+    "README.md",
+    "Pasted image 20231028011023.png",
+    "Untitled.canvas",
+    "2. Технический проект/Module Course Creator",
     "1. Исходные сведения/Словарь.md",
+    "1. Исходные сведения/Архитектурные факторы.md",
     "1. Исходные сведения/Введение.md",
     "3. Технические процессы/CI CD.md",
     "3. Технические процессы/Управление задачами.md",
     "3. Технические процессы/Соглашение о кодировании.md",
     "3. Технические процессы/Документирование.md",
     "3. Технические процессы/Ведение репозитория кода.md",
-    "2. Технический проект/Контейнеры.md",
-    "2. Технический проект/Контекст.md",
-    "2. Технический проект/Компоненты.md",
-    "2. Технический проект/Код.md",
-    "Untitled.canvas",
     "Untitled 2.canvas",
     "Untitled 1.canvas",
-    "README.md",
     "LICENSE",
     "Untitled.md",
     "ADR/2023-09.1 - Выбор архитектурной формы системы.md",
@@ -230,15 +230,11 @@
     "Риски.md",
     "3. Технические процессы/Риски.md",
     "neural_network_doc",
-    "Словарь][маршрутизатором.md",
-    "[.md",
     "0. Встречи с заказчиком",
     "1. Исходные сведения",
     "2. Технический проект/sample-container.puml",
     "2. Технический проект/sample-component.puml",
     "2. Технический проект",
-    "3. Технические процессы",
-    "ADR",
-    "out/2. Технический проект/sample-container"
+    "3. Технические процессы"
   ]
 }
