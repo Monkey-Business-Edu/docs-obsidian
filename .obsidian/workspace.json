@@ -11,8 +11,11 @@
             "id": "6b54ff2c534667a1",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "diff-view",
+              "state": {
+                "file": ".obsidian/workspace.json",
+                "staged": false
+              }
             }
           }
         ]
@@ -186,16 +189,16 @@
   },
   "active": "6b54ff2c534667a1",
   "lastOpenFiles": [
-    "2. Технический проект/Module Course Creator/Module Course Creator.md",
-    "2. Технический проект/Module Course Creator/Backend/Модель данных в  БД.md",
     "2. Технический проект/Module Course Creator/Backend/Entity Relation Diagram.svg",
-    "2. Технический проект/Код.md",
+    "2. Технический проект/Module Course Creator/Backend/Модель данных в  БД.md",
+    "2. Технический проект/Module Course Creator/Module Course Creator.md",
     "2. Технический проект/Компоненты.md",
+    "2. Технический проект/Контейнеры.md",
+    "2. Технический проект/Контекст.md",
+    "2. Технический проект/Код.md",
     "2. Технический проект/Module Course Creator/Общее",
     "2. Технический проект/Module Course Creator/Backend/Архитектура.md",
     "2. Технический проект/Module Course Creator/Backend/GraphQL API.md",
-    "2. Технический проект/Контейнеры.md",
-    "2. Технический проект/Контекст.md",
     "1. Исходные сведения/Архитектурные факторы.md",
     "Untitled 1.canvas",
     "Untitled 2.canvas",
