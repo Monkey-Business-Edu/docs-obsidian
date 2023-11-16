@@ -2,5 +2,6 @@
   "userIgnoreFilters": [
     "out/"
   ],
-  "promptDelete": false
+  "promptDelete": false,
+  "alwaysUpdateLinks": true
 }

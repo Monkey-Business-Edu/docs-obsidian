@@ -4,38 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "adb30bcad6b97f60",
+        "id": "d1ba84073f232605",
         "type": "tabs",
         "children": [
           {
-            "id": "67afbd4ae19e7aaf",
+            "id": "6b54ff2c534667a1",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "diff-view",
               "state": {
-                "file": "Untitled.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
-              }
-            }
-          },
-          {
-            "id": "fca089a95ccc7e32",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1. Исходные сведения/Словарь.md",
-                "mode": "source",
-                "source": false
+                "file": ".obsidian/workspace.json",
+                "staged": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -49,7 +32,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1afd68c37d6874e9",
+            "id": "ddad2f1f02065bc8",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -93,7 +76,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. Исходные сведения/Словарь.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,9 +92,8 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. Исходные сведения/Словарь.md",
                 "linksCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           }
@@ -154,6 +135,14 @@
               "type": "git-history-view",
               "state": {}
             }
+          },
+          {
+            "id": "1440de4ebc9c8ea3",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
           }
         ],
         "currentTab": 1
@@ -167,9 +156,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "1. Исходные сведения/Словарь.md"
-              }
+              "state": {}
             }
           },
           {
@@ -196,27 +183,37 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "fca089a95ccc7e32",
+  "active": "6b54ff2c534667a1",
   "lastOpenFiles": [
+    "2. Технический проект/Module Course Creator/Backend/Entity Relation Diagram.svg",
+    "2. Технический проект/Module Course Creator/Backend/Модель данных в  БД.md",
+    "2. Технический проект/Module Course Creator/Module Course Creator.md",
+    "2. Технический проект/Компоненты.md",
+    "2. Технический проект/Контейнеры.md",
+    "2. Технический проект/Контекст.md",
+    "2. Технический проект/Код.md",
+    "2. Технический проект/Module Course Creator/Общее",
+    "2. Технический проект/Module Course Creator/Backend/Архитектура.md",
+    "2. Технический проект/Module Course Creator/Backend/GraphQL API.md",
     "1. Исходные сведения/Архитектурные факторы.md",
+    "Untitled 1.canvas",
+    "Untitled 2.canvas",
+    "Untitled.canvas",
+    "3. Технические процессы/Соглашение о кодировании.md",
+    "2. Технический проект/Module Course Creator/Backend",
+    "README.md",
+    "Pasted image 20231028011023.png",
+    "2. Технический проект/Module Course Creator",
     "1. Исходные сведения/Словарь.md",
     "1. Исходные сведения/Введение.md",
     "3. Технические процессы/CI CD.md",
     "3. Технические процессы/Управление задачами.md",
-    "3. Технические процессы/Соглашение о кодировании.md",
     "3. Технические процессы/Документирование.md",
     "3. Технические процессы/Ведение репозитория кода.md",
-    "2. Технический проект/Контейнеры.md",
-    "2. Технический проект/Контекст.md",
-    "2. Технический проект/Компоненты.md",
-    "2. Технический проект/Код.md",
-    "Untitled.canvas",
-    "Untitled 2.canvas",
-    "Untitled 1.canvas",
-    "README.md",
     "LICENSE",
     "Untitled.md",
     "ADR/2023-09.1 - Выбор архитектурной формы системы.md",
@@ -228,17 +225,11 @@
     "ADR/2023-09.6 - Выбор инструментов автоматического тестирования.md",
     "ADR/2023-09.7 - Выбор технологического процесса разработки.md",
     "Риски.md",
-    "3. Технические процессы/Риски.md",
     "neural_network_doc",
-    "Словарь][маршрутизатором.md",
-    "[.md",
     "0. Встречи с заказчиком",
     "1. Исходные сведения",
     "2. Технический проект/sample-container.puml",
     "2. Технический проект/sample-component.puml",
-    "2. Технический проект",
-    "3. Технические процессы",
-    "ADR",
-    "out/2. Технический проект/sample-container"
+    "2. Технический проект"
   ]
 }
