@@ -11,10 +11,11 @@
             "id": "6b54ff2c534667a1",
             "type": "leaf",
             "state": {
-              "type": "diff-view",
+              "type": "markdown",
               "state": {
-                "file": ".obsidian/workspace.json",
-                "staged": false
+                "file": "1. Исходные сведения/UseCase.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -76,6 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "1. Исходные сведения/UseCase.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -92,6 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "1. Исходные сведения/UseCase.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -156,7 +159,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "1. Исходные сведения/UseCase.md"
+              }
             }
           },
           {
@@ -189,6 +194,10 @@
   },
   "active": "6b54ff2c534667a1",
   "lastOpenFiles": [
+    "1. Исходные сведения/Введение.md",
+    "1. Исходные сведения/Архитектурные факторы.md",
+    "1. Исходные сведения/UseCase.md",
+    "out/1. Исходные сведения/src/UseCase-Moderator/Recipe Service. Диаграмма компонентов.png",
     "2. Технический проект/Module Course Creator/Backend/Entity Relation Diagram.svg",
     "2. Технический проект/Module Course Creator/Backend/Модель данных в  БД.md",
     "2. Технический проект/Module Course Creator/Module Course Creator.md",
@@ -199,7 +208,6 @@
     "2. Технический проект/Module Course Creator/Общее",
     "2. Технический проект/Module Course Creator/Backend/Архитектура.md",
     "2. Технический проект/Module Course Creator/Backend/GraphQL API.md",
-    "1. Исходные сведения/Архитектурные факторы.md",
     "Untitled 1.canvas",
     "Untitled 2.canvas",
     "Untitled.canvas",
@@ -209,7 +217,6 @@
     "Pasted image 20231028011023.png",
     "2. Технический проект/Module Course Creator",
     "1. Исходные сведения/Словарь.md",
-    "1. Исходные сведения/Введение.md",
     "3. Технические процессы/CI CD.md",
     "3. Технические процессы/Управление задачами.md",
     "3. Технические процессы/Документирование.md",
@@ -224,7 +231,6 @@
     "ADR/2023-09.4 - Выбор системы хранения данных.md",
     "ADR/2023-09.6 - Выбор инструментов автоматического тестирования.md",
     "ADR/2023-09.7 - Выбор технологического процесса разработки.md",
-    "Риски.md",
     "neural_network_doc",
     "0. Встречи с заказчиком",
     "1. Исходные сведения",
