@@ -1,5 +1,5 @@
 # to exclude Obsidian workspace settings 
-obsidian/
+.obsidian/
 
 # This file is used to keep track of last auto backup/pull
 .obsidian-git-data
