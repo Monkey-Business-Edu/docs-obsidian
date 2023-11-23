@@ -1,5 +1,5 @@
 #### Модератор
-![[out/1. Исходные сведения/src/UseCase-Moderator/Recipe Service. Диаграмма компонентов.png]]
+![[Модератор.png]]
 
 #### Преподователь
-![[out/1. Исходные сведения/src/UseCase-Teacher/Recipe Service. Диаграмма компонентов.png]]
+![[Учитель.png]]
