@@ -1,6 +1,6 @@
 [
   "obsidian-git",
-  "table-editor-obsidian",
-  "obsidian-plugin-toc",
-  "drawio-obsidian"
+  "cm-editor-syntax-highlight-obsidian",
+  "obsidian-react-components",
+  "obsidian-diagrams-net",
 ]
