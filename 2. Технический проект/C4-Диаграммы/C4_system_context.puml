@@ -1,0 +1,12 @@
+@startuml C4_system_context
+!include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(user_creator, "Creator")
+
+System(system_course_creator, "Course Creator System", "Позволяет пользователю создавать, редактировать и экспортировать курсы")
+
+System_Ext(system_chat_gpt, "ChatGPT")
+
+Rel(user_creator, system_course_creator, "Создаёт, редактирует и экспортирует курсы")
+Rel(system_course_creator, system_chat_gpt, "Запросы на генерацию контента")
+@enduml
