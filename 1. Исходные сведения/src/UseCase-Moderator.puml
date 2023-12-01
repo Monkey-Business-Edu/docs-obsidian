@@ -1,4 +1,4 @@
-@startuml Recipe Service. Диаграмма компонентов
+@startuml Модератор
 
 ' Скины и стили
 skinparam componentStyle rectangle

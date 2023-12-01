@@ -1,0 +1,98 @@
+@startuml Учитель
+
+' Скины и стили
+skinparam componentStyle rectangle
+skinparam wrapWidth 250
+skinparam packageStyle rectangle 
+skinparam monochrome true
+skinparam defaultFontName Arial
+
+left to right direction
+
+actor Преподаватель as t
+
+package "Авторизация" {
+  usecase "Выйти из системы" as AU1
+  usecase "Войти в систему" as AU2
+  usecase "По логину и паролю" as AU3
+  usecase "Oauth через сторонний сервис" as AU4
+}
+
+t --> AU1
+t --> AU2
+AU2 <.. AU3 : extend
+AU2 <.. AU4 : extend
+
+
+package "Хранилище курсов" {
+  usecase "Посмотреть список курсов" as CS1
+  usecase "Редактировать курс" as CS2
+  usecase "Создать курс" as CS3
+  usecase "Удалить курс" as CS4
+}
+
+t --> CS1
+t --> CS2
+t --> CS3
+t --> CS4
+
+
+package "Генерация курса" {
+  usecase "Создать структуру курса" as CG1
+  usecase "Задать тему курса" as CG1.1
+  usecase "Задать топик" as CG1.2
+  usecase "Посмотреть предложенные топики" as CG1.3
+  usecase "Сохранить шаблон структуры курса" as CG1.4
+  usecase "Редактировать топики" as CG1.5
+
+  usecase "Редактировать структуру курса" as CG2
+  usecase "Редактировать тему курса" as CG2.1
+
+  usecase "Выбрать топик в структуре курса" as CG3
+  usecase "Создать тест по топику" as CG3.1
+  usecase "Создать тест вручную" as CG3.1.1
+  usecase "Сгенерировать тест автоматически" as CG3.1.2
+  usecase "Отредактировать контент в топике" as CG3.2
+  usecase "Сгенерировать  тематический контент для топика" as CG3.3
+  usecase "Сгенерировать  контент для топика" as CG3.4
+  usecase "Выделить понятия топика" as CG3.4.1
+
+
+  usecase "Экспортировать курс" as CG4
+  usecase "Экспортировать в SCORM" as CG4.1
+  usecase "Экспортировать в свой формат" as CG4.2
+
+  usecase "Редактировать понятия" as CG5
+  usecase "Добавить понятия в топи " as CG5.1
+  usecase "Просмотреть понятия в топике" as CG5.2
+  usecase "Удалить понятие из топика" as CG5.3
+}
+
+t --> CG1
+CG1 ..> CG1.1 : include
+CG1 <.. CG1.2 : extend
+CG1 ..> CG1.3 : include
+CG1 ..> CG1.4 : include
+CG1 <.. CG1.5 : extend
+t --> CG2
+CG2 <.. CG1.5 : extend
+CG1 ..> CG1.4 : include
+CG2 <.. CG2.1 : extend
+t --> CG3
+CG3  <.. CG3.1 : extend
+CG3.1  <.. CG3.1.1 : extend
+CG3.1  <.. CG3.1.2 : extend
+CG3  <.. CG3.2 : extend
+CG3  <.. CG3.3 : extend
+CG3  <.. CG3.4 : extend
+CG3.4  ..> CG3.4.1 : include
+t --> CG4
+CG4  <.. CG4.1 : extend
+CG4  <.. CG4.2 : extend
+t --> CG5
+CG5  <.. CG5.1 : extend
+CG5  <.. CG5.3 : extend
+CG5  ..> CG5.2 : include
+
+
+@enduml
