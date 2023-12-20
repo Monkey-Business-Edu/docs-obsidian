@@ -12,3 +12,8 @@ null*
 # Add below lines to exclude OS settings and caches
 .trash/
 .DS_Store
+.obsidian/app.json
+.obsidian/appearance.json
+.obsidian/core-plugins-migration.json
+.obsidian/core-plugins.json
+.obsidian/plugins/table-editor-obsidian/data.json
