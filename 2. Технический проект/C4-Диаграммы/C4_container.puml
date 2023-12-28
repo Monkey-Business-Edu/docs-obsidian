@@ -6,45 +6,39 @@ Person(user_creator, "Creator", "Пользователь, желающий со
 /'###< Course Creator System '/
 System_Boundary(system_course_creator, "Course Creator") {
     Container(tool_course_creator_nginx, "Web Application", "Nginx", "Предоставляет статику наружу и SPA приложение")
+    Container(tool_course_creator_keycloack, "Keycloack", "Keycloack", "Приложение для реализации единой точки аутентификации и авторизации")
     Container(app_course_creator_frontend, "Single-Page Application", "TypeScript, React", "Веб-версия приложения")
+    Container(tool_course_creator_centrifugo, "Messageing Server", "Centrifugo", "База данных")
     Container(app_course_creator_mobile, "Mobile Application", "Flutter", "Мобильная версия приложения")
     Container(app_course_creator_backend, "API Application", "PHP 8.2, RoadRunner, Symfony 6.3", "Предоставляет функционал создания курсов через GraphQL/HTTPS API")
     Container(tool_course_creator_postgres, "Database", "Postgres", "База данных")
+    Container(tool_course_creator_nats, "Message Broker", "NATS", "Брокер сообщений")
+    Container(app_course_creator_filestorage, "File Storage", "Go", "API для работы с файловым хранилищем")
+    Container(tool_course_creator_minio, "Object Storage", "Minio", "Движок для сохранения файлов")
 }
-Rel_R(tool_course_creator_nginx, app_course_creator_frontend, "Отдаёт пользователю в браузер")
+Rel(tool_course_creator_nginx, app_course_creator_frontend, "Отдаёт пользователю в браузер")
 Rel(app_course_creator_frontend, app_course_creator_backend, "Отправляет GraphQL запросы", "GraphQL/HTTPS")
 Rel(app_course_creator_mobile, app_course_creator_backend, "Отправляет GraphQL запросы", "GraphQL/HTTPS")
-Rel_L(app_course_creator_backend, tool_course_creator_postgres, "Читает и пишет", "SQL/TCP")
+Rel(app_course_creator_frontend, tool_course_creator_centrifugo, "Подписывается на сообщения", "Websocket/TCP")
+Rel(app_course_creator_mobile, tool_course_creator_centrifugo, "Подписывается на сообщения", "Websocket/TCP")
+Rel(app_course_creator_backend, tool_course_creator_centrifugo, "Отправляет сообщения", "REST/HTTP")
+Rel(app_course_creator_backend, tool_course_creator_postgres, "Читает и пишет", "SQL/TCP")
+Rel(app_course_creator_backend, tool_course_creator_nats, "Создает таски и подписывается на таски", "TCP")
+Rel(app_course_creator_backend, app_course_creator_filestorage, "Загружает и выгружает файлы", "REST/HTTP")
+Rel(app_course_creator_frontend, app_course_creator_filestorage, "Загружает и выгружает файлы", "REST/HTTP")
+Rel(app_course_creator_mobile, app_course_creator_filestorage, "Загружает и выгружает файлы", "REST/HTTP")
+Rel(app_course_creator_frontend, tool_course_creator_keycloack, "Авторизовывается и обновляет токены", "REST/HTTP")
+Rel(app_course_creator_mobile, tool_course_creator_keycloack, "Авторизовывается и обновляет токены", "REST/HTTP")
+Rel(app_course_creator_filestorage, tool_course_creator_minio, "Складывает и забирает файлы", "TCP")
 /'###> Course Creator System '/
 
 /'###< ChatGPT System '/
 System_Ext(system_chat_gpt, "ChatGPT", "Веб-интерфейс для работы с ChatGPT")
 /'###> ChatGPT System '/
 
-/'###< File Storage System '/
-System_Boundary(system_file_storage, "File Storage") {
-    Container(app_file_storage_api, "File Storage API", "Go", "Веб API для работы с файлами")
-    Container(tool_file_storage_minio, "File Storage Engine", "Minio", "Движок для сохранения файлов")
-}
-Rel_R(app_file_storage_api, tool_file_storage_minio, "Выполняет API вызовы", "TCP")
-/'###> File Storage System '/
-
-/'###< Message Queue System '/
-System_Boundary(system_message_broker, "Message Broker") {
-    Container(tool_message_broker_nats, "Message Broker", "NATS", "Брокер событий")
-}
-/'###> Message Queue System '/
-
-Rel(user_creator, tool_course_creator_nginx, "Посещает aicoursecreator.com", "HTTPS")
+Rel(user_creator, tool_course_creator_nginx, "Посещает aicoursecreator.online", "HTTPS/TCP")
 Rel(user_creator, app_course_creator_frontend, "Может просматривать курсы и создавать новые используя")
 Rel(user_creator, app_course_creator_mobile, "Может просматривать курсы и создавать новые используя")
 
-Rel(app_course_creator_frontend, app_file_storage_api, "Отправляет POST multipart запросы с файлами и получает ID файла в системе", "HTTPS")
-Rel(app_course_creator_mobile, app_file_storage_api, "Отправляет POST multipart запросы с файлами и получает ID файла в системе", "HTTPS")
-
 Rel(app_course_creator_backend, system_chat_gpt, "Выполняет API вызовы", "HTTPS")
-
-Rel(app_file_storage_api, tool_message_broker_nats, "Отправляет уведомление об успешной загрузке файла", "TCP")
-Rel(app_course_creator_backend, tool_message_broker_nats, "Слушает уведомления о загрузках файла", "TCP")
-
 @enduml
