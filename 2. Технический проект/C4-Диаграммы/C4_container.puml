@@ -6,6 +6,7 @@ Person(user_creator, "Creator", "Пользователь, желающий со
 /'###< Course Creator System '/
 System_Boundary(system_course_creator, "Course Creator") {
     Container(tool_course_creator_nginx, "Web Application", "Nginx", "Предоставляет статику наружу и SPA приложение")
+    Container(tool_course_creator_api_gateway, "API Gateway", "Go", "Единая точка входа для API запросов")
     Container(tool_course_creator_keycloack, "Keycloack", "Keycloack", "Приложение для реализации единой точки аутентификации и авторизации")
     Container(app_course_creator_frontend, "Single-Page Application", "TypeScript, React", "Веб-версия приложения")
     Container(tool_course_creator_centrifugo, "Messageing Server", "Centrifugo", "База данных")
@@ -17,18 +18,26 @@ System_Boundary(system_course_creator, "Course Creator") {
     Container(tool_course_creator_minio, "Object Storage", "Minio", "Движок для сохранения файлов")
 }
 Rel(tool_course_creator_nginx, app_course_creator_frontend, "Отдаёт пользователю в браузер")
-Rel(app_course_creator_frontend, app_course_creator_backend, "Отправляет GraphQL запросы", "GraphQL/HTTPS")
-Rel(app_course_creator_mobile, app_course_creator_backend, "Отправляет GraphQL запросы", "GraphQL/HTTPS")
-Rel(app_course_creator_frontend, tool_course_creator_centrifugo, "Подписывается на сообщения", "Websocket/TCP")
-Rel(app_course_creator_mobile, tool_course_creator_centrifugo, "Подписывается на сообщения", "Websocket/TCP")
+
+Rel(app_course_creator_frontend, tool_course_creator_api_gateway, "Отправляет GraphQL запросы", "GraphQL/HTTPS")
+Rel(app_course_creator_mobile, tool_course_creator_api_gateway, "Отправляет GraphQL запросы", "GraphQL/HTTPS")
+
+Rel(app_course_creator_frontend, tool_course_creator_api_gateway, "Подписывается на сообщения", "Websocket/TCP")
+Rel(app_course_creator_mobile, tool_course_creator_api_gateway, "Подписывается на сообщения", "Websocket/TCP")
+
+Rel(app_course_creator_frontend, tool_course_creator_api_gateway, "Авторизовывается и обновляет токены", "REST/HTTP")
+Rel(app_course_creator_mobile, tool_course_creator_api_gateway, "Авторизовывается и обновляет токены", "REST/HTTP")
+
+Rel(tool_course_creator_api_gateway, app_course_creator_backend, "Проксирует клиентские запросы к API", "GraphQL/HTTP")
+Rel(tool_course_creator_api_gateway, tool_course_creator_centrifugo, "Проксирует клиентские подключения к WS", "Websocket/TCP")
+
+Rel(tool_course_creator_api_gateway, app_course_creator_filestorage, "Проксирует клиентские запросы к API", "REST/HTTP")
+Rel(tool_course_creator_api_gateway, tool_course_creator_keycloack, "Аутентифицирует пользовательские запросы", "REST/HTTP")
+
 Rel(app_course_creator_backend, tool_course_creator_centrifugo, "Отправляет сообщения", "REST/HTTP")
 Rel(app_course_creator_backend, tool_course_creator_postgres, "Читает и пишет", "SQL/TCP")
 Rel(app_course_creator_backend, tool_course_creator_nats, "Создает таски и подписывается на таски", "TCP")
-Rel(app_course_creator_backend, app_course_creator_filestorage, "Загружает и выгружает файлы", "REST/HTTP")
-Rel(app_course_creator_frontend, app_course_creator_filestorage, "Загружает и выгружает файлы", "REST/HTTP")
-Rel(app_course_creator_mobile, app_course_creator_filestorage, "Загружает и выгружает файлы", "REST/HTTP")
-Rel(app_course_creator_frontend, tool_course_creator_keycloack, "Авторизовывается и обновляет токены", "REST/HTTP")
-Rel(app_course_creator_mobile, tool_course_creator_keycloack, "Авторизовывается и обновляет токены", "REST/HTTP")
+
 Rel(app_course_creator_filestorage, tool_course_creator_minio, "Складывает и забирает файлы", "TCP")
 /'###> Course Creator System '/
 
