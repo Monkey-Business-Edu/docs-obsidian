@@ -1,0 +1,57 @@
+@startuml NeuroCourse. maintenance
+
+'left to right direction	
+top to bottom direction
+
+
+' skin
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #444444
+    BorderColor #444444
+    BorderStvle dashed
+    BackgroundColor #FFFFFF
+    allign right
+}
+
+package "Development" {
+    [Developer]
+    [Code VCS]
+    [CI]
+    [CD]
+}
+[Developer] --> [Code VCS]: "commit" 
+[Code VCS] --> [CI]: "test & build"
+[CI] --> [CD]
+
+package "Kubernetes Cluster" {  
+    [Controller]
+    [Node/Pode/Container] 
+}
+[Controller] --> [Node/Pode/Container]: "deplov" 
+[CD] --> [Controller]: "deploy" 
+
+package "External Services" {
+    [MQ]
+    [BD]
+}
+[Node/Pode/Container] --> [MQ]
+[Node/Pode/Container] --> [BD]
+
+package "External Network" {
+   [User]
+}
+[User] --> [Node/Pode/Container]
+
+package "Artifacts" {
+    [Container Registry]
+    [Config VCS]
+}
+[CI] --> [Container Registry]: "upload image"
+[Controller] --> [Container Registry]: "fetch"
+[Controller] --> [Config VCS]: "fetch"
+
+
+
+@enduml

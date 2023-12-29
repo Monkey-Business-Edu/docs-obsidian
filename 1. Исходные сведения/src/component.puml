@@ -1,0 +1,83 @@
+@startuml NeuroCourse. Диаграмма компонента
+
+' C4
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+' limit text width
+skinparam wrapWidth 250
+skinparam wrapMessageWidth 200
+
+'
+title "NeuroCourse. Диаграмма компонента"
+
+
+' Client Apps
+Container(webApplication, "Web Application", "React", "веб приложение")
+Container(mobApplication, "Mobile Application", "Flutter", "мобильная версия приложения")
+
+' Gateway Services
+Container(apiGateway, "API Gateway", "Go", "Управляет запросами")
+
+' NATS
+Container(natsData, "Очередь сообщений", "NATS", "Очередь задач на выполнение")
+
+' Centritugo
+Container(centritugoData, "сервис доставки обновлений", "Centritugo", "доставка real-time обновлений с сервера на клиент")
+
+' Components api aplication
+Container_Boundary(apiAplicationContainer, "api aplication") {
+    Container(natsCommunicator, "natsCommunicator", "", "пишет и обрабатывает Massage из NATS")
+    Container(centritugoCommunicator, "centritugoCommunicator", "", "взаимодействие с Centritugo")
+
+    Container(apiDataController, "apiDataController", "Web API Controller", "обрабатывает HTTP запросы, извлекает параметры")
+    
+    Container(dataManapulatingComponent, "dataManapulatingController", "", "управление данными: созранение/чтение/перезапись... ")
+
+    Container(dbInteractingComponent, "dbInteracting", "GraphQL", "взаимодействие с баззой данных")
+    Container(gptInteractingComponent, "gptInteracting", "", "взаимодействие с Chat GPT API")
+
+    'core?
+    Container(core, "coreLogicComponent", "", "общее управление процессом")
+}
+
+
+' bd component
+ContainerDb(db, "Database", "container: PostgreSQL Schema", "Хранит курсы") 
+
+' Chat GPT
+System_Ext(chatGpt, "ChatGPT", "веб интерфей для работы с gpt")
+
+
+
+' References
+' apiGateway
+webApplication --> apiGateway : "Использует\n [HTTPS]"
+mobApplication --> apiGateway : "Использует\n [HTTPS]"
+apiGateway --> apiDataController : "Использует\n [HTTPS]"
+
+' apiDataController
+apiDataController -down-> core : "Uses"
+
+' NATS
+natsCommunicator -left-> natsData : "создание и подпись на задачи \n [TCP]"
+
+' Centritugo
+centritugoCommunicator -down-> centritugoData : "Оправление сообщений \n [REST/HTTPS]"
+
+' Chat GPT
+gptInteractingComponent -right-> chatGpt:  "выполняет api вызовы \n [JSON/HTTPS]"
+
+' Core?
+core -right-> gptInteractingComponent : "Uses"
+core -left-> natsCommunicator : "Uses"
+
+core -down-> dataManapulatingComponent : "Uses"
+core -down-> centritugoCommunicator : "Uses"
+
+
+' bdInteractingComponent
+dataManapulatingComponent -down-> dbInteractingComponent : "Uses"
+
+' db
+dbInteractingComponent -down-> db : "чтение/запись [SQL/TCP]"
