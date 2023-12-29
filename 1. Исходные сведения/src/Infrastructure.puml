@@ -1,0 +1,51 @@
+@startuml NeuroCourse. Диаграмма infrastructure
+' C4
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Deployment.puml
+
+'
+title "NeuroCourse. Диаграмма infrastructure"
+
+'
+System(front, "web/mobile app")
+
+
+
+package "Сервер" { 
+
+    System(api_gateway, "API Gateway")
+
+    
+
+
+    package "Doker-compose" { 
+
+        package "Doker-контейнер NATS" {  
+            Container(nats, "nats", "", "")  
+        }
+
+        package "Doker-контейнер centrifugo" {  
+            Container(centrifugo, "centrifugo", "", "")  
+        }
+
+        package "Doker-контейнер front" {  
+            Container(spaFront, "Front spa", "React", "")  
+        }
+
+        package "Doker-контейнер back" { 
+            Container(back, "api aplication ", "php", "")
+        }
+
+        package "Doker-контейнер bd" { 
+            Container(db, "Database", "postgresql")
+        }
+    }
+}
+
+
+'ref
+front --> api_gateway : "HTTP"
+api_gateway --> spaFront : "HTTP"
+spaFront --> back : "TCP/IP"
+back -left-> nats : "TCP/IP"
+back -down-> centrifugo : "TCP/IP"
+back -right-> db : "TCP/IP"

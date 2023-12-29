@@ -13,6 +13,7 @@ title "NeuroCourse. Диаграмма компонента"
 
 
 ' Client Apps
+Container(spApplication, "Singl Page Application", "React", "веб приложение")
 Container(webApplication, "Web Application", "React", "веб приложение")
 Container(mobApplication, "Mobile Application", "Flutter", "мобильная версия приложения")
 
@@ -52,8 +53,9 @@ System_Ext(chatGpt, "ChatGPT", "веб интерфей для работы с g
 
 ' References
 ' apiGateway
-webApplication --> apiGateway : "Использует\n [HTTPS]"
-mobApplication --> apiGateway : "Использует\n [HTTPS]"
+webApplication --> apiGateway : "отправляет запросы\n [HTTPS]"
+mobApplication --> apiGateway : "отправляет запросы\n [HTTPS]"
+spApplication  --> apiGateway : "отправляет запросы\n [HTTPS]"
 apiGateway --> apiDataController : "Использует\n [HTTPS]"
 
 ' apiDataController
