@@ -1,0 +1,83 @@
+@startuml Deployment
+
+footer Kubernetes Plant-UML
+scale max 1024 width
+
+' Kubernetes
+!define KubernetesPuml https://raw.githubusercontent.com/dcasati/kubernetes-PlantUML/master/dist
+
+' global definition
+!includeurl KubernetesPuml/kubernetes_Common.puml
+!includeurl KubernetesPuml/kubernetes_Context.puml
+!includeurl KubernetesPuml/kubernetes_Simplified.puml
+
+' k8s specific components
+!includeurl KubernetesPuml/OSS/KubernetesSvc.puml
+!includeurl KubernetesPuml/OSS/KubernetesIng.puml
+!includeurl KubernetesPuml/OSS/KubernetesPod.puml
+!includeurl KubernetesPuml/OSS/KubernetesRs.puml
+!includeurl KubernetesPuml/OSS/KubernetesDeploy.puml
+!includeurl KubernetesPuml/OSS/KubernetesHpa.puml
+
+actor "User" as userAlias
+left to right direction
+
+' Kubernetes Components
+Cluster_Boundary(cluster, "Kubernetes Cluster") {
+  Namespace_Boundary(ns, "AiCourseCreator") {
+    KubernetesIng(ingress, "aicoursecreator.online", "")
+
+    KubernetesSvc(frontendSvc, "frontend-service", "")
+    KubernetesPod(frontendPod, "frontend-pod", "")
+
+    KubernetesSvc(backendSvc, "backend-service", "")
+    KubernetesPod(backendPod1, "backend-pod-1", "")
+    KubernetesPod(backendPod2, "backend-pod-2", "")
+
+    KubernetesSvc(databaseSvc, "database-service", "")
+    KubernetesPod(databasePod1, "database-pod-1", "")
+
+    KubernetesSvc(centrifugoSvc, "centrifugo-service", "")
+    KubernetesPod(centrifugoPod, "centrifugo-pod", "")
+
+    KubernetesSvc(natsSvc, "nats-service", "")
+    KubernetesPod(natsPod1, "nats-pod-1", "")
+    KubernetesPod(natsPod2, "nats-pod-2", "")
+  }
+}
+
+Rel(userAlias, ingress, "* HTTP/1.1 /", "1")
+Rel(ingress, userAlias, "recieve content", "3")
+
+Rel(ingress, frontendSvc, "* HTTP/1.1 /", "1.1")
+Rel(frontendSvc, frontendPod, "load Balances to Pods", "2.1")
+Rel_U(frontendPod, frontendSvc, "serves content", "3.1")
+
+Rel(ingress, backendSvc, "GET HTTP/1.1 /api", "1.2")
+Rel(backendSvc, backendPod1, "load Balances to Pods", "2.2")
+Rel(backendSvc, backendPod2, "load Balances to Pods", "2.2")
+Rel_U(backendPod1, backendSvc, "serves content", "3.2")
+Rel_U(backendPod2, backendSvc, "serves content", "3.2")
+
+Rel(databaseSvc, databasePod1, "load Balances to Pods")
+Rel(backendPod1, databaseSvc, "connect to database", "5")
+Rel_U(databasePod1, databaseSvc, "serves content", "6")
+
+Rel(ingress, centrifugoSvc, "GET HTTP/1.1 /centrifugo", "1.3")
+Rel(centrifugoSvc, centrifugoPod, "load Balances to Pods", "2.3")
+Rel_U(centrifugoPod, ingress, "serves updates through ws", "3.3")
+Rel(ingress, userAlias, "serves updates through ws", "3.3")
+Rel(backendPod1, centrifugoSvc, "pushes updates", "7")
+Rel(backendPod2, centrifugoSvc, "pushes updates", "7")
+
+
+Rel(natsSvc, natsPod1, "load Balances to Pods", "8")
+Rel(natsPod1, natsSvc, "returns messages from queue", "9")
+Rel(natsSvc, natsPod2, "load Balances to Pods", "8")
+Rel(natsPod1, natsSvc, "returns messages from queue", "9")
+Rel(backendPod1, natsSvc, "pushes messages", "10")
+Rel(backendPod2, natsSvc, "pushes messages", "10")
+Rel(backendPod1, natsSvc, "subscribes on messages", "10")
+Rel(backendPod2, natsSvc, "subscribes on messages", "10")
+
+@enduml
